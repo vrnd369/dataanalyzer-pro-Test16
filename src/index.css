@@ -1,11 +1,11 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 /* Import text utilities */
 @import './styles/text.css';
 /* Import responsive utilities */
 @import './styles/responsive.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @layer base {
   body {
