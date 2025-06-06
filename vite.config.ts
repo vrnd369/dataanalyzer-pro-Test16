@@ -27,7 +27,32 @@ export default defineConfig({
     },
     // Improve build performance
     rollupOptions: {
-      cache: true
-    }
+      cache: true,
+      output: {
+        manualChunks: {
+          'vendor': [
+            'react',
+            'react-dom',
+            'react-router-dom',
+            '@mui/material',
+            '@emotion/react',
+            '@emotion/styled'
+          ],
+          'charts': [
+            'chart.js',
+            'react-chartjs-2',
+            'echarts',
+            'recharts'
+          ],
+          'utils': [
+            'lodash',
+            'axios',
+            'papaparse',
+            'xlsx'
+          ]
+        }
+      }
+    },
+    chunkSizeWarningLimit: 1000 // Increase the warning limit to 1000kb
   }
 });
